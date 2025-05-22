@@ -1,0 +1,23 @@
+name: Build and Push Docker Image to Private Registry
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    env:
+      REGISTRY_HOST: 148.113.180.22:5000
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: docker build -t $REGISTRY_HOST/adminSys:latest .
+
+      - name: Push Docker image (no login)
+        run: docker push $REGISTRY_HOST/adminSys:latest
