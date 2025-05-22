@@ -19,7 +19,7 @@ jobs:
         run: docker build -t admin376/portainer-customer:latest .
 
       - name: Push image to DockerHub
-        run: docker push admin376/portainer-custome:latest
+        run: docker push admin376/portainer-customer:latest
 
   deploy:
     runs-on: ubuntu-latest
@@ -32,7 +32,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            docker pull admin376/portainer-custome:latest
+            docker pull admin376/portainer-customer:latest
             docker stop portainer || true && docker rm portainer || true
             docker volume create portainer_data || true
             docker run -d -p 9000:9000 -p 9443:9443 \
@@ -40,4 +40,4 @@ jobs:
               --restart=always \
               -v /var/run/docker.sock:/var/run/docker.sock \
               -v portainer_data:/data \
-              admin376/portainer-custome:latest
+              admin376/portainer-customer:latest

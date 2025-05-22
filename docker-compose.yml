@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   portainer:
-    image: admin376/portainer-custome:latest
+    image: admin376/portainer-customer:latest
     container_name: portainer
     restart: always
     ports:
