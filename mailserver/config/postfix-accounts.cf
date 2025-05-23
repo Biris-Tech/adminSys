@@ -1,0 +1,2 @@
+user1@example.com|{SSHA512}motdepasse_hashé
+user2@example.com|{SSHA512}autre_hash

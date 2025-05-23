@@ -1,0 +1,7 @@
+smtpd_banner = $myhostname ESMTP $mail_name
+biff = no
+append_dot_mydomain = no
+readme_directory = no
+smtpd_tls_cert_file=/etc/letsencrypt/live/mail.example.com/fullchain.pem
+smtpd_tls_key_file=/etc/letsencrypt/live/mail.example.com/privkey.pem
+smtpd_use_tls=yes

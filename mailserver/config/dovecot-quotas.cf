@@ -1,0 +1,9 @@
+plugin {
+  quota = maildir:User quota
+  quota_rule = *:storage=1G
+  quota_rule2 = Trash:storage=+100M
+}
+
+protocol imap {
+  mail_plugins = $mail_plugins quota imap_quota
+}
