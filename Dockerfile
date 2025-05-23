@@ -17,5 +17,5 @@ COPY config-mailserver/postfix-accounts.cf /tmp/docker-mailserver/postfix-accoun
 COPY config-mailserver/postfix-virtual.cf /tmp/docker-mailserver/postfix-virtual.cf
 
 # Script patch si besoin
-COPY config-mailserver/user-patches.sh /tmp/docker-mailserver/user-patches.sh
+#COPY config-mailserver/user-patches.sh /tmp/docker-mailserver/user-patches.sh
 
